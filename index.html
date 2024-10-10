@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Activity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Daily Activity
+            <img src="routine2.png" alt="Routine" style="width: 40px; height: auto; vertical-align: middle; margin-left: 10px;">
+
+</h1>
+    </header>
+    <div id="activities"></div>
+
+    <!-- Popup for adding activity -->
+    <div id="add-activity-popup" class="hidden">
+        <h2>Add Activity</h2>
+        <form id="add-activity-form">
+            <label for="activity-desc">Activity Description:</label>
+            <input type="text" id="activity-desc" required>
+            <label for="activity-time">Time:</label>
+            <input type="time" id="activity-time" required>
+            <button type="submit" id="submit-activity-btn">Submit</button>
+        </form>
+        <button id="close-popup-btn">&times;</button>
+    </div>
+
+    <!-- Button for adding activity, now positioned at the bottom right -->
+    <button id="add-activity-btn" class="add-activity-btn">+</button>
+
+    <!-- Bottom Navigation Menu for Selected Activity -->
+    <div id="bottom-nav" class="hidden">
+        <div id="selected-activity"></div>
+        <button class="nav-btn" id="complete-btn">Completed</button>
+        <button class="nav-btn" id="edit-btn">Edit</button>
+        <button class="nav-btn" id="share-btn">Share</button>
+        <button class="nav-btn" id="delete-btn">Delete</button>
+    </div>
+
+    <!-- Edit Popup for Editing an Activity -->
+    <div id="edit-activity-popup" class="hidden">
+        <h2>Edit Activity</h2>
+        <form id="edit-activity-form">
+            <label for="edit-activity-desc">Activity Description:</label>
+            <input type="text" id="edit-activity-desc" required>
+            <label for="edit-activity-time">Time:</label>
+            <input type="time" id="edit-activity-time" required>
+            <button type="submit" id="save-edit-btn">Save</button>
+        </form>
+        <button id="close-edit-popup-btn">&times;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

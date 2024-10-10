@@ -1,0 +1,121 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+}
+
+#activities {
+    padding: 10px;
+}
+
+.activity-item {
+    padding: 10px;
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.activity-item:hover {
+    background-color: #e0e0e0;
+}
+
+/* Styling for the Add Activity button */
+.add-activity-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Popup styling */
+#add-activity-popup, #edit-activity-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+#add-activity-popup.hidden, #edit-activity-popup.hidden {
+    display: none;
+}
+
+button#close-popup-btn, button#close-edit-popup-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Bottom navigation styling */
+#bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+#bottom-nav.hidden {
+    display: none;
+}
+
+.nav-btn {
+    background-color: white;
+    color: #007bff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* style.css */
+
+.hidden {
+    display: none;
+}
+
+.activity-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.add-activity-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+}
