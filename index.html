@@ -10,8 +10,7 @@
     <header>
         <h1>My Daily Activity
             <img src="routine2.png" alt="Routine" style="width: 40px; height: auto; vertical-align: middle; margin-left: 10px;">
-
-</h1>
+        </h1>
     </header>
     <div id="activities"></div>
 
@@ -29,15 +28,40 @@
     </div>
 
     <!-- Button for adding activity, now positioned at the bottom right -->
-    <button id="add-activity-btn" class="add-activity-btn">+</button>
+    <div class="add-activity-container">
+        <span class="add-activity-text">Add New Activity</span>
+        <button id="add-activity-btn" class="add-activity-btn">+</button>
+    </div>
 
-    <!-- Bottom Navigation Menu for Selected Activity -->
+    <!-- Bottom Navigation with Action Buttons -->
     <div id="bottom-nav" class="hidden">
         <div id="selected-activity"></div>
-        <button class="nav-btn" id="complete-btn">Completed</button>
-        <button class="nav-btn" id="edit-btn">Edit</button>
-        <button class="nav-btn" id="share-btn">Share</button>
-        <button class="nav-btn" id="delete-btn">Delete</button>
+        
+        <div class="action-buttons">
+            <!-- Completed Button -->
+            <button id="complete-btn">
+                <img src="completed2.png" alt="Complete" width="30" height="30">
+                <span>Completed</span>
+            </button>
+
+            <!-- Edit Button -->
+            <button id="edit-btn">
+                <img src="edit2.png" alt="Edit" width="30" height="30">
+                <span>Edit</span>
+            </button>
+
+            <!-- Share Button -->
+            <button id="share-btn">
+                <img src="share.png" alt="Share" width="30" height="30">
+                <span>Share</span>
+            </button>
+
+            <!-- Delete Button -->
+            <button id="delete-btn">
+                <img src="delete3.png" alt="Delete" width="30" height="30">
+                <span>Delete</span>
+            </button>
+        </div>
     </div>
 
     <!-- Edit Popup for Editing an Activity -->
