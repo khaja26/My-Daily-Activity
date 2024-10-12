@@ -30,7 +30,7 @@ header {
 /* Styling for the Add Activity button and text */
 .add-activity-container {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px; /* Adjusted to not overlap with the bottom nav */
     right: 20px;
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@ header {
 .add-activity-text {
     font-size: 14px;
     color: lightgray;
-    margin-right: 10px; /* Space between text and button */
+    margin-right: 60px; /* Space between text and button */
 }
 
 .add-activity-btn {
@@ -102,18 +102,38 @@ button#close-popup-btn, button#close-edit-popup-btn {
     display: none;
 }
 
-.nav-btn {
-    background-color: white;
-    color: #007bff;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
+/* Action buttons container */
+.action-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
 }
 
-/* style.css */
+/* Individual action buttons */
+.action-buttons button {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between image and text */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
 
+/* Action button icon styles */
+.action-buttons img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Style for the navigation buttons */
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    border: none;
+}
+
+/* Hidden class for bottom nav */
 .hidden {
     display: none;
 }
@@ -127,7 +147,7 @@ button#close-popup-btn, button#close-edit-popup-btn {
 
 .add-activity-btn {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px; /* Adjusted to not overlap with the bottom nav */
     right: 20px;
     font-size: 24px;
 }
@@ -148,35 +168,4 @@ button#close-popup-btn, button#close-edit-popup-btn {
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #ccc;
-}
-
-/* Action buttons container */
-.action-buttons {
-    display: flex;
-    gap: 15px; /* Space between buttons */
-}
-
-/* Individual action buttons */
-.action-buttons button {
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Space between image and text */
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.action-buttons span {
-    font-size: 14px;
-    color: #333; /* Text color */
-}
-
-.action-buttons button img {
-    width: 30px;
-    height: 30px;
-}
-
-/* Hidden class for bottom nav */
-.hidden {
-    display: none;
 }
