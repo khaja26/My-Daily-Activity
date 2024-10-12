@@ -182,15 +182,22 @@ function checkForNotifications() {
         const [activityHour, activityMinute] = activity.time.split(":").map(Number);
         const activityDateTime = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), activityHour, activityMinute);
 
-        // Check if the activity date and time matches the current date and time
+        // Check if the activity's date and time match the current date and time
         if (activity.date === currentDate.toLocaleDateString() && 
             activityDateTime.getTime() <= currentDate.getTime() && 
-            activity.completed === false) {
-            // Show notification and alert for the activity
+            !activity.completed) {
+
+            // Display alert for the activity
             alert(`Reminder: ${activity.description} at ${activity.time}`);
+
+            // Show browser notification
             showNotification(activity.description, activity.time);
-            playAlarm(); // Play audio alarm
-            activity.completed = true; // Mark as completed after notification
+
+            // Play an audio alarm
+            playAlarm();
+
+            // Mark activity as completed after notification
+            activity.completed = true;
             localStorage.setItem('activities', JSON.stringify(activities)); // Update localStorage
         }
     });
@@ -210,10 +217,51 @@ function showNotification(title, time) {
     }
 }
 
-// Function to play audio alarm
+// Function to play an audio alarm
 function playAlarm() {
-    const audio = new Audio('alarm.mp3'); // Specify your audio file path
+    const audio = new Audio('alarm.mp3'); // Specify your alarm audio file path
     audio.play().catch(error => {
         console.error('Error playing audio:', error);
     });
 }
+
+// Check for notifications every minute
+setInterval(checkForNotifications, 60000);
+
+
+function copyActivitiesForTomorrow() {
+    const activities = JSON.parse(localStorage.getItem('activities')) || [];
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1); // Get tomorrow's date
+    const tomorrowDate = tomorrow.toLocaleDateString(); // Format as today's date
+
+    const newActivities = activities.map(activity => {
+        return {
+            description: activity.description, 
+            time: activity.time, 
+            date: tomorrowDate, 
+            completed: false, 
+            completionDate: null 
+        };
+    });
+
+    localStorage.setItem('activities', JSON.stringify(newActivities));
+}
+
+function scheduleActivityCopy() {
+    const now = new Date();
+    const midnight = new Date();
+    midnight.setHours(24, 0, 0, 0); // Set time to midnight
+
+    const msUntilMidnight = midnight - now;
+
+    // Set a timeout to copy activities at midnight
+    setTimeout(() => {
+        copyActivitiesForTomorrow();
+        scheduleActivityCopy(); // Reschedule for the next day
+    }, msUntilMidnight);
+}
+
+// Call this function when the app starts
+scheduleActivityCopy();
+
