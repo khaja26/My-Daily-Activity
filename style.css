@@ -39,7 +39,7 @@ header {
 .add-activity-text {
     font-size: 14px;
     color: lightgray;
-    margin-right: 150px; /* Space between text and button */
+    margin-right: 100px; /* Space between text and button */
 }
 
 .add-activity-btn {
